@@ -1,0 +1,19 @@
+{
+	"name": "Dev Container",
+	"build": {
+		"dockerfile": "Dockerfile.dev"
+	},
+	"forwardPorts": [3000, 6006],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"svelte.svelte-vscode",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ZixuanChen.vitest-explorer"
+			]
+		}
+	},
+	"remoteUser": "node",
+	"postCreateCommand": "yarn install && yarn playwright install && yarn playwright install-deps"
+}
